@@ -17,8 +17,8 @@ public class MainView
 
     public void run() throws Exception
     {
-        System.out.println("Adding a bird with weight 10.");
-        _controller.addAnimal(new Bird(10));
+        System.out.println("Adding a bird with weight 2.");
+        _controller.addAnimal(new Bird(2));
 
         System.out.println("Adding a cow with weight 500.");
         Cow cow = new Cow(500);
@@ -35,6 +35,12 @@ public class MainView
 
         System.out.println();
 
+        System.out.println("Printing all animals with weight greater than 3.");
+        for (IAnimal animal : _controller.getAllAnimalsWithWeight(4, -1))
+            System.out.println(animal.toString());
+
+        System.out.println();
+
         System.out.println("Removing the cow.");
         _controller.removeAnimal(cow);
 
@@ -42,6 +48,12 @@ public class MainView
 
         System.out.println("Printing all animals.");
         for (IAnimal animal : _controller.getAllAnimals())
+            System.out.println(animal.toString());
+
+        System.out.println();
+
+        System.out.println("Printing all animals with weight greater than 3.");
+        for (IAnimal animal : _controller.getAllAnimalsWithWeight(4, -1))
             System.out.println(animal.toString());
     }
 }

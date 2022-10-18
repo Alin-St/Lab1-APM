@@ -39,4 +39,17 @@ public class Controller
 
         return result;
     }
+
+    public ArrayList<IAnimal> getAllAnimalsWithWeight(int minWeight, int maxWeight) throws Exception
+    {
+        ArrayList<IAnimal> result = new ArrayList<>();
+
+        for (IAnimal animal : getAllAnimals())
+        {
+            if ((minWeight < 0 || animal.getWeight() >= minWeight) && (maxWeight < 0 || animal.getWeight() <= maxWeight))
+                result.add(animal);
+        }
+
+        return result;
+    }
 }
